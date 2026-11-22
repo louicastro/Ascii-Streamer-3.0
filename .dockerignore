@@ -16,7 +16,13 @@ pnpm-debug.log*
 dist
 */dist
 */*/dist
+<<<<<<< HEAD
 ai_video_engine/__pycache__
 ai_video_engine/*.pyc
+=======
+target
+*/target
+*.pdb
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 Ascii-Streamer
 README.md

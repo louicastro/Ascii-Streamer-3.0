@@ -8,21 +8,44 @@
 }
 
 :root {
+<<<<<<< HEAD
   --upgrade-glow: rgba(57, 255, 82, 0.2);
   --upgrade-cyan-glow: rgba(0, 245, 255, 0.14);
+=======
+  --obsidian-bg: #0a0d0e;
+  --obsidian-surface: #0e1416;
+  --obsidian-elevated: #131c1f;
+  --obsidian-border: #1c2b2e;
+  --obsidian-border-bright: #274045;
+  --theme-accent: #39ff52;
+  --theme-accent-dim: #22cc38;
+  --theme-accent-rgb: 57, 255, 82;
+  --theme-glow: rgba(57, 255, 82, 0.28);
+  --theme-border: rgba(57, 255, 82, 0.35);
+  --theme-bg-subtle: rgba(57, 255, 82, 0.08);
+  --theme-bg-hover: rgba(57, 255, 82, 0.16);
+  --upgrade-glow: var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   --upgrade-panel: rgba(10, 17, 12, 0.78);
   --upgrade-panel-strong: rgba(13, 20, 14, 0.9);
 }
 
 body {
   background:
+<<<<<<< HEAD
     radial-gradient(circle at top, rgba(57, 255, 82, 0.08), transparent 28%),
     radial-gradient(circle at bottom right, rgba(0, 245, 255, 0.06), transparent 22%),
     var(--bg);
+=======
+    radial-gradient(circle at top, var(--theme-bg-subtle), transparent 32%),
+    var(--obsidian-bg);
+  color: #d8e5e8;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   letter-spacing: 0.01em;
 }
 
 .topbar {
+<<<<<<< HEAD
   background: rgba(13, 19, 13, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -32,6 +55,21 @@ body {
 .logo {
   letter-spacing: 0.12em;
   text-shadow: 0 0 16px rgba(57, 255, 82, 0.9), 0 0 24px rgba(57, 255, 82, 0.6);
+=======
+  background: rgba(10, 13, 14, 0.96) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), inset 0 -1px 0 var(--obsidian-border-bright) !important;
+}
+
+.logo {
+  color: var(--theme-accent) !important;
+  text-shadow: 0 0 12px var(--theme-glow), 0 0 20px var(--theme-glow) !important;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .preset-btn,
@@ -48,6 +86,7 @@ body {
 
 .preset-btn.active,
 .source-btn.active {
+<<<<<<< HEAD
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 18px rgba(57, 255, 82, 0.12);
 }
 
@@ -56,12 +95,34 @@ body {
   border: 1px solid rgba(57, 255, 82, 0.12);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+=======
+  background: var(--theme-bg-hover) !important;
+  border-color: var(--theme-accent) !important;
+  color: var(--theme-accent) !important;
+  box-shadow: 0 0 14px var(--theme-glow), inset 0 0 4px var(--theme-bg-subtle) !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease;
+}
+
+.waiting-overlay {
+  background: radial-gradient(circle at center, rgba(14, 20, 22, 0.9) 0%, rgba(5, 7, 8, 0.98) 75%);
+  border: 1px solid var(--theme-border);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: border-color 0.3s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-text {
   font-size: 14px;
   letter-spacing: 0.26em;
+<<<<<<< HEAD
   text-shadow: 0 0 14px rgba(57, 255, 82, 0.9);
+=======
+  color: var(--theme-accent);
+  text-shadow: 0 0 14px var(--theme-glow);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-hint {
@@ -75,13 +136,21 @@ body {
   gap: 10px;
   padding: 8px 12px;
   background: rgba(11, 16, 12, 0.9);
+<<<<<<< HEAD
   border: 1px solid rgba(57, 255, 82, 0.18);
+=======
+  border: 1px solid rgba(var(--theme-accent-rgb), 0.18);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   border-radius: 999px;
   color: rgba(200, 216, 192, 0.9);
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+<<<<<<< HEAD
   box-shadow: 0 0 16px rgba(57, 255, 82, 0.08);
+=======
+  box-shadow: 0 0 16px rgba(var(--theme-accent-rgb), 0.08);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-badge {
@@ -91,8 +160,13 @@ body {
   min-width: 28px;
   padding: 4px 7px;
   border-radius: 999px;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.12);
   border: 1px solid rgba(57, 255, 82, 0.35);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.12);
+  border: 1px solid rgba(var(--theme-accent-rgb), 0.35);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   color: var(--green);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -207,7 +281,11 @@ body {
 }
 .setting-text:focus {
   border-color: var(--green);
+<<<<<<< HEAD
   box-shadow: 0 0 8px rgba(57, 255, 82, 0.2);
+=======
+  box-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .setting-checkbox {
@@ -218,10 +296,17 @@ body {
 }
 
 .icon-btn.active {
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.2);
   border-color: var(--green);
   color: var(--green);
   box-shadow: 0 0 10px rgba(57, 255, 82, 0.3);
+=======
+  background: var(--theme-bg-hover);
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 10px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .icon-btn.copied {
@@ -270,10 +355,19 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.07);
   border: 1px solid rgba(57, 255, 82, 0.25);
   border-radius: 999px;
   padding: 3px 12px;
+=======
+  background: var(--theme-bg-subtle);
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  padding: 3px 12px;
+  box-shadow: 0 0 16px var(--theme-glow);
+  transition: all 0.3s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-tagline {
@@ -291,7 +385,12 @@ body {
   letter-spacing: -0.01em;
   line-height: 1.25;
   margin: 0;
+<<<<<<< HEAD
   text-shadow: 0 0 24px rgba(57, 255, 82, 0.45);
+=======
+  text-shadow: 0 0 24px var(--theme-glow);
+  transition: text-shadow 0.3s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-subtitle {
@@ -311,8 +410,13 @@ body {
 }
 
 .waiting-action-card {
+<<<<<<< HEAD
   background: rgba(14, 22, 16, 0.85);
   border: 1px solid rgba(57, 255, 82, 0.22);
+=======
+  background: rgba(14, 20, 22, 0.88);
+  border: 1px solid var(--theme-border);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   border-radius: 8px;
   padding: 16px 14px;
   display: flex;
@@ -321,17 +425,29 @@ body {
   text-align: center;
   gap: 10px;
   cursor: pointer;
+<<<<<<< HEAD
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+=======
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   font-family: inherit;
   color: inherit;
 }
 
 .waiting-action-card:hover {
+<<<<<<< HEAD
   border-color: var(--green);
   background: rgba(57, 255, 82, 0.1);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(57, 255, 82, 0.16);
+=======
+  border-color: var(--theme-accent);
+  background: var(--theme-bg-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-action-card:active {
@@ -345,18 +461,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.12);
   color: var(--green);
   border: 1px solid rgba(57, 255, 82, 0.3);
   transition: all 0.2s ease;
+=======
+  background: var(--theme-bg-subtle);
+  color: var(--theme-accent);
+  border: 1px solid var(--theme-border);
+  transition: all 0.25s ease;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .waiting-action-card:hover .action-card-icon {
   transform: scale(1.08);
+<<<<<<< HEAD
   background: var(--green);
   color: #0c1016;
   border-color: var(--green);
   box-shadow: 0 0 16px rgba(57, 255, 82, 0.6);
+=======
+  background: var(--theme-accent);
+  color: #0a0d0e;
+  border-color: var(--theme-accent);
+  box-shadow: 0 0 16px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .action-card-text {
@@ -417,7 +547,11 @@ body {
 .preview-pill:hover {
   border-color: var(--green);
   color: var(--green);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.08);
+=======
+  background: var(--theme-bg-subtle);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   transform: translateY(-1px);
 }
 
@@ -432,7 +566,11 @@ body {
 }
 
 .settings-details[open] {
+<<<<<<< HEAD
   border-color: rgba(57, 255, 82, 0.3);
+=======
+  border-color: var(--theme-border);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .settings-summary {
@@ -456,7 +594,11 @@ body {
 }
 
 .settings-summary:hover {
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.06);
+=======
+  background: var(--theme-bg-subtle);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   color: var(--green);
 }
 
@@ -488,8 +630,13 @@ body {
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.05em;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.12);
   border: 1px solid rgba(57, 255, 82, 0.35);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.12);
+  border: 1px solid rgba(var(--theme-accent-rgb), 0.35);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   color: var(--green);
 }
 
@@ -550,3 +697,259 @@ body {
     opacity: 0.9;
   }
 }
+<<<<<<< HEAD
+=======
+
+
+/* ════════════════════════════════════════════════════════════════════════════════
+   DYNAMIC PHOSPHOR WORKSTATION DESIGN SYSTEM
+   ════════════════════════════════════════════════════════════════════════════════ */
+
+body {
+  background: var(--obsidian-bg) !important;
+  color: #d8e5e8 !important;
+}
+
+/* ─── Workstation Topbar ─── */
+.topbar {
+  background: rgba(10, 13, 14, 0.96) !important;
+  border-bottom: 1px solid var(--obsidian-border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), inset 0 -1px 0 var(--obsidian-border-bright) !important;
+}
+
+.logo {
+  color: var(--theme-accent) !important;
+  text-shadow: 0 0 12px var(--theme-glow), 0 0 20px var(--theme-glow) !important;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.preset-btn {
+  background: #0d1315 !important;
+  border: 1px solid var(--obsidian-border) !important;
+  color: #9cb1b5 !important;
+  border-radius: 3px !important;
+  transition: all 0.2s ease;
+}
+
+.preset-btn:hover {
+  border-color: var(--theme-accent-dim) !important;
+  color: #ffffff !important;
+  background: var(--theme-bg-subtle) !important;
+}
+
+.preset-btn.active {
+  background: var(--theme-bg-hover) !important;
+  border-color: var(--theme-accent) !important;
+  color: var(--theme-accent) !important;
+  box-shadow: 0 0 12px var(--theme-glow), inset 0 0 4px var(--theme-bg-subtle) !important;
+  font-weight: 700 !important;
+}
+
+.source-btn {
+  background: #0d1315 !important;
+  border: 1px solid var(--obsidian-border) !important;
+  color: #9cb1b5 !important;
+  border-radius: 3px !important;
+  transition: all 0.2s ease;
+}
+
+.source-btn:hover {
+  border-color: var(--theme-accent-dim) !important;
+  color: #ffffff !important;
+  background: var(--theme-bg-subtle) !important;
+}
+
+.source-btn.active {
+  background: var(--theme-bg-hover) !important;
+  border-color: var(--theme-accent) !important;
+  color: var(--theme-accent) !important;
+  box-shadow: 0 0 12px var(--theme-glow) !important;
+}
+
+/* ─── Settings Panel Stepper Rows ─── */
+.setting-stepper-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.setting-label-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.stepper-ctrls {
+  display: flex;
+  gap: 4px;
+}
+
+.stepper-btn {
+  width: 26px;
+  height: 22px;
+  background: #111a1d;
+  border: 1px solid var(--obsidian-border-bright);
+  color: var(--theme-accent);
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.stepper-btn:hover {
+  background: var(--theme-bg-hover);
+  border-color: var(--theme-accent);
+  color: #ffffff;
+}
+
+.stepper-btn:active {
+  transform: scale(0.94);
+  background: var(--theme-accent);
+  color: #000;
+}
+
+/* ─── Modular Workstation Telemetry Dock ─── */
+.workstation-telemetry {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  background: rgba(8, 12, 13, 0.98) !important;
+  border-top: 1px solid var(--obsidian-border) !important;
+  padding: 0 14px;
+  gap: 16px;
+  font-size: 11px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 -4px 16px rgba(0, 0, 0, 0.4);
+  z-index: 40;
+}
+
+.workstation-telemetry .stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.stat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4a5c5f;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-dot.fps-high {
+  background: var(--theme-accent);
+  box-shadow: 0 0 8px var(--theme-accent);
+}
+
+.stat-dot.fps-mid {
+  background: var(--theme-accent-dim);
+  box-shadow: 0 0 8px var(--theme-accent-dim);
+}
+
+.stat-dot.fps-low {
+  background: #ff4444;
+  box-shadow: 0 0 8px #ff4444;
+}
+
+.workstation-telemetry .stat-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #648188;
+}
+
+.workstation-telemetry .stat-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #e2eff2;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.workstation-telemetry .stat-unit {
+  font-size: 9px;
+  color: #648188;
+}
+
+.stat-badge-pipeline {
+  background: rgba(0, 245, 255, 0.1) !important;
+  border: 1px solid rgba(0, 245, 255, 0.35) !important;
+  color: #00f5ff !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.stat-badge-mode {
+  background: var(--theme-bg-subtle) !important;
+  border: 1px solid var(--theme-border) !important;
+  color: var(--theme-accent) !important;
+  transition: all 0.3s ease;
+}
+
+.stat-badge-source {
+  background: var(--theme-bg-subtle) !important;
+  border: 1px solid var(--theme-border) !important;
+  color: var(--theme-accent) !important;
+  transition: all 0.3s ease;
+}
+
+/* ─── Settings Panel Overhaul ─── */
+.settings-panel {
+  background: var(--obsidian-surface) !important;
+  border-left: 1px solid var(--obsidian-border) !important;
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+.settings-header {
+  border-bottom: 1px solid var(--obsidian-border) !important;
+  background: var(--obsidian-bg) !important;
+}
+
+.settings-title {
+  color: var(--theme-accent) !important;
+  letter-spacing: 0.18em;
+  transition: color 0.3s ease;
+}
+
+.section-label {
+  color: var(--theme-accent-dim) !important;
+  letter-spacing: 0.15em;
+  transition: color 0.3s ease;
+}
+
+.settings-panel .preset-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  overflow: visible;
+}
+
+.settings-panel .preset-btn {
+  min-width: 0;
+  padding: 7px 6px;
+  text-align: left;
+}
+
+/* ─── Interactive Form Controls ─── */
+input[type="range"] {
+  accent-color: var(--theme-accent) !important;
+}
+
+.color-swatch.active {
+  box-shadow: 0 0 12px var(--theme-accent), 0 0 0 2px #ffffff !important;
+}
+
+@media (max-width: 768px) {
+}
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)

@@ -50,11 +50,34 @@ Thumbs.db
 .cache/
 .local/
 
+<<<<<<< HEAD
 # Python & temporary files
 __pycache__/
 *.py[cod]
 modify_css.py
+=======
+# Rust build artifacts
+target/
+rust_video_engine/target/
+*.pdb
+
+# Media directories & temporary files
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 converted_videos/
 uploaded_videos/
 test_output/
 Ascii-Streamer/
+<<<<<<< HEAD
+=======
+
+# Android build & local configs
+.gradle/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+local.properties
+*.iml
+.cxx/
+
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)

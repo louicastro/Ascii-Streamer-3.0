@@ -1,5 +1,9 @@
 // ASCILI Offline Service Worker
+<<<<<<< HEAD
 const CACHE_NAME = 'ascili-cache-v2.4.2';
+=======
+const CACHE_NAME = 'ascili-cache-v3.0.0';
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 const STATIC_ASSETS = [
   './',

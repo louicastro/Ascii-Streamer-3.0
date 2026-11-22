@@ -97,7 +97,11 @@ body {
 
 .mobile-menu-btn:hover {
   border-color: var(--green);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.08);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.08);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .preset-bar {
@@ -142,14 +146,23 @@ body {
 .preset-btn:hover {
   border-color: var(--green-dim);
   color: var(--green-dim);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.04);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.04);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .preset-btn.active {
   border-color: var(--green);
   color: var(--green);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.08);
   text-shadow: 0 0 8px rgba(57, 255, 82, 0.5);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.08);
+  text-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .source-bar {
@@ -448,7 +461,11 @@ body {
   font-weight: 700;
   color: var(--green);
   letter-spacing: 0.2em;
+<<<<<<< HEAD
   text-shadow: 0 0 8px rgba(57, 255, 82, 0.4);
+=======
+  text-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   display: flex;
   align-items: center;
   gap: 6px;
@@ -627,7 +644,11 @@ body {
 .export-btn:hover {
   border-color: var(--green-dim);
   color: var(--green);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.05);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.05);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 /* ─── SHORTCUTS ─────────────────────────────────────────────── */
@@ -679,7 +700,11 @@ kbd {
 
 .stat-val {
   color: var(--green);
+<<<<<<< HEAD
   text-shadow: 0 0 8px rgba(57, 255, 82, 0.6);
+=======
+  text-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -722,7 +747,11 @@ kbd {
   transition: opacity 0.2s, transform 0.2s;
   pointer-events: none;
   z-index: 999;
+<<<<<<< HEAD
   text-shadow: 0 0 8px rgba(57, 255, 82, 0.5);
+=======
+  text-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .toast.show {
@@ -771,14 +800,23 @@ kbd {
 .dl-main-btn:hover {
   border-color: var(--green) !important;
   color: var(--green) !important;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.08) !important;
+=======
+  background: rgba(var(--theme-accent-rgb), 0.08) !important;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .dl-main-btn.open {
   border-color: var(--green) !important;
   color: var(--green) !important;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.12) !important;
   box-shadow: 0 0 10px rgba(57, 255, 82, 0.25);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.12) !important;
+  box-shadow: 0 0 10px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .dl-caret {
@@ -795,11 +833,19 @@ kbd {
   top: calc(100% + 5px);
   right: 0;
   background: #0c1016;
+<<<<<<< HEAD
   border: 1px solid rgba(57, 255, 82, 0.3);
   border-radius: 4px;
   min-width: 200px;
   z-index: 1000;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 16px rgba(57, 255, 82, 0.12);
+=======
+  border: 1px solid var(--theme-border);
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 16px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -844,7 +890,11 @@ kbd {
 }
 
 .dl-item:hover {
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.1);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.1);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   color: var(--green);
   padding-left: 17px;
 }
@@ -906,7 +956,11 @@ kbd {
   font-weight: 700;
   color: var(--green);
   letter-spacing: 0.18em;
+<<<<<<< HEAD
   text-shadow: 0 0 8px rgba(57,255,82,0.35);
+=======
+  text-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .cv-body {
@@ -960,7 +1014,11 @@ kbd {
 .cv-drop-zone.drag-over {
   border-color: var(--green);
   color: var(--green);
+<<<<<<< HEAD
   background: rgba(57,255,82,0.06);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.06);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .cv-file-info {
@@ -1057,7 +1115,11 @@ kbd {
   background: var(--green);
   width: 0%;
   transition: width 0.3s ease;
+<<<<<<< HEAD
   box-shadow: 0 0 8px rgba(57,255,82,0.5);
+=======
+  box-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .cv-progress-meta {
@@ -1118,7 +1180,11 @@ kbd {
   flex-direction: row;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   background: rgba(57,255,82,0.05);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.05);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   border: 1px solid var(--green-dim);
   padding: 12px 16px;
 }
@@ -1126,7 +1192,11 @@ kbd {
 .cv-done svg {
   stroke: var(--green);
   flex-shrink: 0;
+<<<<<<< HEAD
   filter: drop-shadow(0 0 6px rgba(57,255,82,0.5));
+=======
+  filter: drop-shadow(0 0 6px var(--theme-glow));
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .cv-done-title {
@@ -1166,8 +1236,13 @@ kbd {
 }
 
 .cv-btn-primary:hover:not(:disabled) {
+<<<<<<< HEAD
   background: rgba(57,255,82,0.15);
   box-shadow: 0 0 12px rgba(57,255,82,0.2);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.15);
+  box-shadow: 0 0 12px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .cv-btn-primary:disabled {
@@ -1223,12 +1298,21 @@ kbd {
   cursor: pointer;
   letter-spacing: 0.1em;
   transition: all 0.15s;
+<<<<<<< HEAD
   box-shadow: 0 0 16px rgba(57,255,82,0.3);
 }
 
 .cv-btn-green:hover {
   background: #5fff72;
   box-shadow: 0 0 24px rgba(57,255,82,0.5);
+=======
+  box-shadow: 0 0 16px var(--theme-glow);
+}
+
+.cv-btn-green:hover {
+  background: var(--theme-accent);
+  box-shadow: 0 0 24px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 /* Download item highlight */
@@ -1394,7 +1478,11 @@ kbd {
 /* ─── DRAG & DROP ZONE ──────────────────────────────────────── */
 .ascii-container.drop-active {
   border: 2px dashed var(--green);
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.05);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.05);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 .ascii-container.drop-active::after {
   content: 'DROP FILE HERE';
@@ -1442,7 +1530,11 @@ kbd {
   height: 100%;
   background: var(--green);
   width: 0%;
+<<<<<<< HEAD
   box-shadow: 0 0 8px rgba(57,255,82,0.5);
+=======
+  box-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   transition: width 0.1s linear;
 }
 .vt-thumb {
@@ -1453,7 +1545,11 @@ kbd {
   height: 12px;
   background: var(--green);
   border-radius: 50%;
+<<<<<<< HEAD
   box-shadow: 0 0 8px rgba(57,255,82,0.8);
+=======
+  box-shadow: 0 0 8px var(--theme-glow);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   transition: transform 0.2s ease;
 }
 .vt-bar:hover .vt-thumb {
@@ -1499,7 +1595,11 @@ kbd {
 }
 .rec-res-item:last-child { border-bottom: none; }
 .rec-res-item:hover, .rec-res-item.active {
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.08);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.08);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   color: var(--green);
 }
 
@@ -1640,7 +1740,11 @@ kbd {
     justify-content: center;
     min-width: 34px;
     min-height: 34px;
+<<<<<<< HEAD
     background: rgba(57, 255, 82, 0.08);
+=======
+    background: rgba(var(--theme-accent-rgb), 0.08);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     border: 1px solid var(--border-bright);
     border-radius: 4px;
     color: var(--green);
@@ -1829,7 +1933,11 @@ kbd {
 /* ─── Negative Space & Subject Segmentation ────────────────────────────────── */
 
 #sectionNegativeSpace {
+<<<<<<< HEAD
   border: 1px solid rgba(57, 255, 82, 0.25);
+=======
+  border: 1px solid var(--theme-border);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   border-radius: 6px;
   background: rgba(8, 16, 10, 0.6);
   padding: 12px;
@@ -1837,7 +1945,11 @@ kbd {
 }
 
 #sectionNegativeSpace .section-label {
+<<<<<<< HEAD
   color: #39ff52;
+=======
+  color: var(--theme-accent);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   letter-spacing: 1px;
 }
 
@@ -1860,9 +1972,15 @@ kbd {
   letter-spacing: 0.5px;
   padding: 3px 7px;
   border-radius: 4px;
+<<<<<<< HEAD
   background: rgba(57, 255, 82, 0.15);
   color: #39ff52;
   border: 1px solid rgba(57, 255, 82, 0.3);
+=======
+  background: rgba(var(--theme-accent-rgb), 0.15);
+  color: var(--theme-accent);
+  border: 1px solid var(--theme-border);
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 }
 
 .neg-space-status-badge.neural {

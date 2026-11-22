@@ -14,17 +14,31 @@ services:
       NODE_ENV: production
     restart: unless-stopped
 
+<<<<<<< HEAD
   # Python Video Engine (Optional - uncomment to enable high-throughput Python backend)
   # python-engine:
   #   build:
   #     context: .
   #     dockerfile: Dockerfile.python
   #   container_name: ascii-streamer-python
+=======
+  # Rust Video Engine (Optional - uncomment to enable high-performance Rust backend)
+  # rust-engine:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.rust
+  #   container_name: ascii-streamer-rust
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   #   ports:
   #     - "8000:8000"
   #   environment:
   #     PORT: 8000
   #   volumes:
+<<<<<<< HEAD
   #     - ./ai_video_engine:/app/ai_video_engine
   #     - ./converted_videos:/app/converted_videos
+=======
+  #     - ./converted_videos:/app/converted_videos
+  #     - ./uploaded_videos:/app/uploaded_videos
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   #   restart: unless-stopped

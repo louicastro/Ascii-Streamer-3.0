@@ -93,7 +93,11 @@ public class AsciliWebAppInterface {
      */
     @JavascriptInterface
     public String getAppVersion() {
+<<<<<<< HEAD
         return "2.4.0";
+=======
+        return BuildConfig.VERSION_NAME;
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     }
 
     /**

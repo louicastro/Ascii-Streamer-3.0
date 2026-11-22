@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # ASCILI Android Application
 
 Official Android Application for **ASCILI (Ascii-Streamer 2.0)** — Real-Time High-Performance ASCII Video Streaming & Media Workstation.
+=======
+# ASCII Streamer-3.0 Android Application
+
+Official Android Application for **ASCII Streamer 3.0 (ASCII Streamer-3.0)** — Real-Time High-Performance ASCII Video Streaming & Media Workstation.
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
@@ -8,9 +14,15 @@ Official Android Application for **ASCILI (Ascii-Streamer 2.0)** — Real-Time H
 
 | Package File | Size | Purpose |
 | :--- | :--- | :--- |
+<<<<<<< HEAD
 | [**`dist-apk/ascili-v2.4.0-release.apk`**](file:///home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-release.apk) | **~2.5 MB** | **Production Release APK**: `debuggable=false`, package `com.asciistreamer.ascili`, minified with R8, resource shrunk, and fully optimized. Ready to install directly on Android devices. |
 | [**`dist-apk/ascili-v2.4.0-release.aab`**](file:///home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-release.aab) | **~3.2 MB** | **Google Play App Bundle (AAB)**: Upload directly to the Google Play Console (Target SDK 35). |
 | [**`dist-apk/ascili-v2.4.0-debug.apk`**](file:///home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-debug.apk) | **~5.9 MB** | **Debug APK**: Unobfuscated testing build with Chrome DevTools WebView debugging enabled. |
+=======
+| [**`dist-apk/ASCII-Streamer-3.0-release.apk`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.apk) | **~2.59 MB** | **Production Release APK**: `versionName="ASCII Streamer-3.0"`, `versionCode=30`, `debuggable=false`, package `com.asciistreamer.ascili`, minified with R8, resource shrunk, and fully optimized. Ready to install directly on Android devices. |
+| [**`dist-apk/ASCII-Streamer-3.0-release.aab`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.aab) | **~3.37 MB** | **Google Play App Bundle (AAB)**: Upload directly to the Google Play Console (Target SDK 35). |
+| [**`dist-apk/ASCII-Streamer-3.0-debug.apk`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-debug.apk) | **~6.14 MB** | **Debug APK**: Unobfuscated testing build with Chrome DevTools WebView debugging enabled. |
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
@@ -133,11 +145,19 @@ Output: `app/build/outputs/bundle/release/app-release.aab`
 
 ### Option 1: Via ADB (Command Line)
 ```bash
+<<<<<<< HEAD
 adb install -r dist-apk/ascili-v2.0.0-release.apk
 ```
 
 ### Option 2: Direct File Transfer
 1. Send `dist-apk/ascili-v2.0.0-release.apk` to your phone via USB, Bluetooth, Google Drive, or Telegram.
+=======
+adb install -r dist-apk/ascili-v3.0.0-release.apk
+```
+
+### Option 2: Direct File Transfer
+1. Send `dist-apk/ascili-v3.0.0-release.apk` to your phone via USB, Bluetooth, Google Drive, or Telegram.
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 2. Tap the `.apk` file on your phone and choose "Install".
 
 ## 📱 Device Behavior and Troubleshooting
@@ -149,7 +169,11 @@ adb install -r dist-apk/ascili-v2.0.0-release.apk
   selected files.
 - Rendering and exports run on-device. Large videos can require substantial
   memory and storage, especially at 1080p or higher.
+<<<<<<< HEAD
 - The app is designed for offline use. The Python API is not required for local
+=======
+- The app is designed for offline use. The backend API (Rust engine) is not required for local
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   camera, image, video, and export workflows.
 - If the app returns to the launcher after a heavy export, reopen it and use a
   lower resolution or column count. Android may reclaim WebView renderer memory

@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "name": "ASCILI — ASCII Video Engine",
   "short_name": "ASCILI",
+=======
+  "name": "ASCII Streamer-3.0",
+  "short_name": "ASCII Streamer-3.0",
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   "description": "Real-time ASCII Video, Subtitle and GIF Generator",
   "start_url": "./index.html",
   "display": "standalone",

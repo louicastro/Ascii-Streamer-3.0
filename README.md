@@ -1,20 +1,35 @@
+<<<<<<< HEAD
 # Ascii-Streamer 2.0 (ASCILI)
+=======
+# ASCII Streamer 3.0 (ASCII Streamer-3.0)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ```text
     _   ___  ___ ___ ___   ___ _____ ___ ___   _   __  __ ___ ___ 
    /_\ / __|/ __|_ _|_ _| / __|_   _| _ \ __| /_\ |  \/  | __| _ \
   / _ \\__ \ (__ | | | |  \__ \ | | |   / _| / _ \| |\/| | _||   /
+<<<<<<< HEAD
  /_/ \_\___/\___|___|___| |___/ |_| |_|_\___/_/ \_\_|  |_|___|_|_\  v2.0
 ```
 
 > **High-Performance ASCII Video Streaming, Real-Time Webcam Workstation, Photorealistic Dithering, Social Media Presets, and 24 FPS YouTube `.ytt` Animated Color Subtitles.**
+=======
+ /_/ \_\___/\___|___|___| |___/ |_| |_|_\___/_/ \_\_|  |_|___|_|_\  v3.0
+```
+
+> **High-Performance ASCII Video Streaming, Real-Time Webcam Workstation, Photorealistic Dithering, Social Media Presets, Native Android App, and 24 FPS YouTube `.ytt` Animated Color Subtitles.**
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20.0.0-green.svg)](https://nodejs.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-10.5.2-orange.svg)](https://pnpm.io/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com/)
 [![PWA](https://img.shields.io/badge/PWA-100%25%20Offline-7928CA.svg)](#pwa--100-offline-support)
+<<<<<<< HEAD
 [![Android](https://img.shields.io/badge/Android-APK%20%26%20AAB%20Ready-3DDC84.svg?logo=android&logoColor=white)](android/README.md)
+=======
+[![Android](https://img.shields.io/badge/Android-APK%20%26%20AAB%20v3.0-3DDC84.svg?logo=android&logoColor=white)](#-native-android-app-v30)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 [![YouTube](https://img.shields.io/badge/YouTube-.ytt%20Subtitles-FF0000.svg)](#youtube-timed-text-ytt-animation-guide)
 
 ---
@@ -30,6 +45,10 @@
   - [5. Custom Character Sets & Free Color Picker](#5-custom-character-sets--free-color-picker)
   - [6. Comprehensive Export Suite with Live Preview](#6-comprehensive-export-suite-with-live-preview)
   - [7. PWA & 100% Offline Support](#7-pwa--100-offline-support)
+<<<<<<< HEAD
+=======
+- [Native Android App (v3.0)](#-native-android-app-v30)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 - [YouTube Timed Text (.ytt) Animation Guide](#youtube-timed-text-ytt-animation-guide)
 - [Export Formats Reference](#export-formats-reference)
 - [Architecture & Monorepo Structure](#architecture--monorepo-structure)
@@ -47,11 +66,19 @@
 
 ## Overview
 
+<<<<<<< HEAD
 **Ascii-Streamer 2.0 (ASCILI)** is an advanced dual-engine ASCII media workstation designed for content creators, live streamers, and retro-computing enthusiasts:
 
 - **Client-Side Engine (`artifacts/ascili`)**: Zero-latency HTML5 Canvas/WebGL engine capable of transforming live webcam streams, screen recordings, and local video files into ASCII animations at up to 60 FPS in full 24-bit TrueColor or retro phosphor green.
 - **Backend API & Server (`artifacts/api-server`)**: Hardened Express 5 server providing unified static file serving, safe Single-Page Application (SPA) routing, CORS allowlists, sliding-window rate limiting, and health monitoring.
 - **Python Video Processing Engine (`ai_video_engine`)**: Server-side engine utilizing NumPy, pycairo, FFmpeg, and standard library HTTP server for offline batch conversions, 1080p rendering with audio preservation, and headless pipelines.
+=======
+**ASCII Streamer 3.0 (ASCII Streamer-3.0)** is an advanced dual-engine ASCII media workstation designed for content creators, live streamers, retro-computing enthusiasts, and mobile users:
+
+- **Client-Side Engine (`artifacts/ascili`)**: Zero-latency HTML5 Canvas/WebGL engine capable of transforming live webcam streams, screen recordings, and local video files into ASCII animations at up to 60 FPS in full 24-bit TrueColor or retro phosphor green.
+- **Backend API & Server (`artifacts/api-server`)**: Hardened Express 5 server providing unified static file serving, safe Single-Page Application (SPA) routing, CORS allowlists, sliding-window rate limiting, and health monitoring.
+- **Rust Video Processing Engine (`rust_video_engine`)**: Ultra-fast (4,500+ FPS) native Rust engine utilizing pure-Rust bitmap rasterization, Sobel edge perception, temporal hysteresis, bidirectional FFmpeg pipes, and zero-dependency HTTP/SSE streaming server for offline batch conversions and live ASCII feeds.
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
@@ -109,6 +136,31 @@
 
 ---
 
+<<<<<<< HEAD
+=======
+## 📱 Native Android App (v3.0)
+
+ASCII Streamer 3.0 provides an official native Android application hardened for performance, security, and 100% offline usage.
+
+### Ready Build Packages ([`dist-apk/`](dist-apk/))
+
+| Package File | Size | Format | Description |
+| :--- | :--- | :--- | :--- |
+| [**`ASCII-Streamer-3.0-release.apk`**](dist-apk/ASCII-Streamer-3.0-release.apk) | **~2.59 MB** | `.apk` | **Production Release APK**: `versionName="ASCII Streamer-3.0"`, `versionCode=30`, minified with R8, signed, and ready to install on any device. |
+| [**`ASCII-Streamer-3.0-release.aab`**](dist-apk/ASCII-Streamer-3.0-release.aab) | **~3.37 MB** | `.aab` | **Google Play App Bundle (AAB)**: Target SDK 35 (Android 15), compliant with all Google Play 2026 publishing requirements. |
+| [**`ASCII-Streamer-3.0-debug.apk`**](dist-apk/ASCII-Streamer-3.0-debug.apk) | **~6.14 MB** | `.apk` | **Debug APK**: Unobfuscated testing build with Chrome Remote DevTools inspection enabled. |
+
+### Technical Highlights:
+- **Target SDK 35 (Android 15)**: Full compliance with modern Google Play Developer policies.
+- **100% On-Device & Zero Cloud Transmission**: Real-time ASCII camera transforms and video conversions happen strictly on-device.
+- **Modern Scoped Storage**: Safe exports via `MediaStore` (Movies/Downloads/Images) with zero dangerous permissions (`READ/WRITE_EXTERNAL_STORAGE` removed).
+- **Hardened WebView Isolation**: Assets loaded securely via `androidx.webkit.WebViewAssetLoader` with strict HTTPS scheme sandboxing.
+
+📖 *For installation guides, ADB commands, and architectural deep-dives, see the [Android Deployment Guide](ANDROID_APP_GUIDE.md) and [Android README](android/README.md).*
+
+---
+
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 ## YouTube Timed Text (.ytt) Animation Guide
 
 YouTube's subtitle renderer supports rich XML styling through the `.ytt` (YouTube Timed Text) format. Ascii-Streamer allows you to stream entire ASCII animations inside YouTube captions!
@@ -186,12 +238,24 @@ YouTube's subtitle renderer supports rich XML styling through the `.ytt` (YouTub
 │   ├── api-zod/                # Zod validation schemas
 │   ├── api-client-react/       # React Query client hooks
 │   └── db/                     # Drizzle ORM database layer (PostgreSQL)
+<<<<<<< HEAD
 ├── ai_video_engine/            # Python backend engine (NumPy / pycairo / FFmpeg)
 ├── .github/workflows/
 │   ├── ci.yml                  # Automated typecheck, build, and Python test pipeline
 │   └── deploy.yml              # GitHub Pages deployment workflow
 ├── Dockerfile                  # Multi-stage production container build
 ├── docker-compose.yml          # Container orchestration (Node API + optional Python engine)
+=======
+├── rust_video_engine/          # Ultra-fast Rust video engine (4,500+ FPS / SSE / FFmpeg)
+├── .github/workflows/
+│   ├── ci.yml                  # Automated typecheck, build, and Rust engine test pipeline
+│   └── deploy.yml              # GitHub Pages deployment workflow
+├── android/                    # Native Android application (API 26-35, WebViewAssetLoader, MediaStore)
+├── dist-apk/                   # Ready-to-install Android APKs and Google Play AAB bundle
+├── Dockerfile                  # Multi-stage production container build (Web + API)
+├── Dockerfile.rust             # Multi-stage production container build (Rust engine)
+├── docker-compose.yml          # Container orchestration (Node API + optional Rust engine)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 ├── docker-entrypoint.sh        # Container startup script with dumb-init signal handling
 ├── LICENSE                     # MIT License
 └── pnpm-workspace.yaml         # Pnpm workspace definition and dependency policies
@@ -204,7 +268,11 @@ YouTube's subtitle renderer supports rich XML styling through the `.ytt` (YouTub
 - **Node.js**: `>= 20.0.0` (LTS recommended)
 - **pnpm**: `>= 9.0.0` (Pinned to `10.5.2`)
 - **Docker & Docker Compose** (optional, for containerized deployments)
+<<<<<<< HEAD
 - **Python**: `>= 3.10` with `numpy`, `pycairo`, and `ffmpeg` (for `ai_video_engine`)
+=======
+- **Rust & Cargo**: `>= 1.75` with `ffmpeg` in system PATH (for `rust_video_engine`)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
@@ -254,6 +322,16 @@ YouTube's subtitle renderer supports rich XML styling through the `.ytt` (YouTub
    ```
    The Express server serves the frontend at `/` with safe SPA routing, while exposing API endpoints at `/api/*`.
 
+<<<<<<< HEAD
+=======
+3. **Build the Android APK & App Bundle**:
+   ```bash
+   cd android
+   ./gradlew assembleRelease assembleDebug bundleRelease
+   ```
+   Compiled binaries are generated in `android/app/build/outputs/` and pre-packaged in `dist-apk/` (`ASCII-Streamer-3.0-release.apk` and `ASCII-Streamer-3.0-release.aab`).
+
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 ---
 
 ## Docker & Containerized Deployment
@@ -275,6 +353,52 @@ docker-compose up --build
 ```
 This boots:
 - `ascii-streamer-api`: Node.js server and ASCILI web application on port `3000`
+<<<<<<< HEAD
+=======
+- `rust-engine` (optional): Native Rust video converter and SSE streaming server on port `8000`
+
+---
+
+## High-Performance Rust Video Engine (`rust_video_engine`)
+
+The project includes an ultra-fast, native Rust video processing engine capable of processing single frames at **4,500+ FPS** (~0.2 ms per frame) and converting entire 1080p videos with audio preservation.
+
+### 1. Build & Test
+
+```bash
+# Build the optimized release binary
+pnpm run engine:build
+# or: cargo build --release --manifest-path rust_video_engine/Cargo.toml
+
+# Run the unit and pipeline test suite
+pnpm run engine:test
+# or: cargo test --manifest-path rust_video_engine/Cargo.toml
+```
+
+### 2. Start the REST & SSE Streaming Server
+
+```bash
+pnpm run engine:serve
+# or: ./rust_video_engine/rust_video_engine --serve --port 8000
+```
+- Real-time Server-Sent Events (SSE) live ASCII frame feed: `GET /api/stream`
+- Video batch conversions: `POST /api/convert`
+- Job status & progress polling: `GET /api/job/<job_id>`
+- Output download: `GET /api/download/<job_id>`
+
+### 3. Convert Video via CLI
+
+```bash
+./rust_video_engine/rust_video_engine input.mp4 output.mp4 --preset matrix --res 1080p --fps 60
+```
+Available presets: `matrix`, `cyberpunk`, `edge_art`, `truecolor_cinema`, `retro_amber`, `braille_hd`, `negative_space`.
+
+### 4. Play Directly in Terminal
+
+```bash
+./rust_video_engine/rust_video_engine input.mp4 --play --preset cyberpunk --cols 120
+```
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
@@ -308,6 +432,14 @@ This boots:
 | <kbd>H</kbd> | Toggle UI controls (Streamer clean mode) |
 | <kbd>R</kbd> | Reset video to beginning |
 | <kbd>Esc</kbd> | Close export modal or exit fullscreen |
+<<<<<<< HEAD
+=======
+| <kbd>↑</kbd> / <kbd>↓</kbd> | Increase / decrease output columns |
+| <kbd>←</kbd> / <kbd>→</kbd> | Decrease / increase font size |
+| <kbd>-</kbd> | Decrease both output columns and font size |
+| <kbd>+</kbd> | Increase output columns |
+| <kbd>[</kbd> / <kbd>]</kbd> | Decrease / increase font size |
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 

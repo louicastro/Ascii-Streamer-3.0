@@ -10,8 +10,13 @@ android {
         applicationId "com.asciistreamer.ascili"
         minSdk 26
         targetSdk 35
+<<<<<<< HEAD
         versionCode 24
         versionName "2.4.0"
+=======
+        versionCode 30
+        versionName "ASCII Streamer-3.0"
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -19,6 +24,13 @@ android {
         }
     }
 
+<<<<<<< HEAD
+=======
+    buildFeatures {
+        buildConfig = true
+    }
+
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     buildTypes {
         release {
             minifyEnabled true

@@ -7,6 +7,7 @@
 
 ## 📱 Quick Access: Ready Build Artifacts
 
+<<<<<<< HEAD
 All pre-compiled packages are generated and stored in the [`dist-apk/`](file:///home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/) directory:
 
 | File Name | File Size | Format | Primary Purpose |
@@ -19,20 +20,42 @@ All pre-compiled packages are generated and stored in the [`dist-apk/`](file:///
 * **Release APK**: `/home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-release.apk`
 * **Release AAB**: `/home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-release.aab`
 * **Debug APK**: `/home/loui/Pictures/Ascii-Streamer-2.0-main/dist-apk/ascili-v2.4.0-debug.apk`
+=======
+All pre-compiled packages are generated and stored in the [`dist-apk/`](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/) directory:
+
+| File Name | File Size | Format | Primary Purpose |
+| :--- | :--- | :--- | :--- |
+| [**`ASCII-Streamer-3.0-release.apk`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.apk) | **~2.59 MB** | `.apk` | **Production Release APK**: `versionName="ASCII Streamer-3.0"`, `versionCode=30`, `debuggable=false`, package `com.asciistreamer.ascili`, minified with R8, resource shrunk, and fully optimized. Ready to install directly on any Android device. |
+| [**`ASCII-Streamer-3.0-release.aab`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.aab) | **~3.37 MB** | `.aab` | **Google Play App Bundle**: Target SDK 35, compliant with all Google Play publishing requirements. |
+| [**`ASCII-Streamer-3.0-debug.apk`**](file:///C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-debug.apk) | **~6.14 MB** | `.apk` | **Debug APK**: Unobfuscated testing build with Chrome Remote DevTools inspection enabled. |
+
+### Absolute Paths on Disk:
+* **Release APK**: `C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.apk`
+* **Release AAB**: `C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-release.aab`
+* **Debug APK**: `C:/Users/Admin/Downloads/Ascii-Streamer-2.0-main/Ascii-Streamer-2.0-main/dist-apk/ASCII-Streamer-3.0-debug.apk`
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
 ## 📲 How to Install on an Android Phone
 
 ### Method A: Direct Transfer (No PC tools required)
+<<<<<<< HEAD
 1. Transfer `dist-apk/ascili-v2.4.0-release.apk` to your phone via USB cable, Google Drive, Telegram, or WhatsApp.
+=======
+1. Transfer `dist-apk/ASCII-Streamer-3.0-release.apk` to your phone via USB cable, Google Drive, Telegram, or WhatsApp.
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 2. Locate the file in your phone's **Files** / **Downloads** app.
 3. Tap the `.apk` file and select **Install** (if prompted, allow "Install from unknown sources").
 
 ### Method B: Via ADB (Command Line)
 Connect your Android phone to your PC with USB debugging enabled, then run:
 ```bash
+<<<<<<< HEAD
 adb install -r dist-apk/ascili-v2.4.0-release.apk
+=======
+adb install -r dist-apk/ASCII-Streamer-3.0-release.apk
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 ```
 
 ---
@@ -162,16 +185,28 @@ flowchart TD
 
 ---
 
+<<<<<<< HEAD
 ### 7. Universal Version Synchronization (v2.4.0 / Code 24)
+=======
+### 7. Universal Version Synchronization (v3.0.0 / Code 30)
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 * **The Problem**:
   - Multiple contradictory version numbers existed across the project: APK filename (2.2.0), Android `versionName` (2.0.0), interface badge (V2.4), and script query parameters (`?v=2.3`).
 * **The Resolution**:
   - Synchronized all indicators across every layer:
+<<<<<<< HEAD
     - `build.gradle`: `versionCode 24`, `versionName "2.4.0"`
     - Interface Badge: `<span class="waiting-badge">V2.4.0</span>`
     - Asset Cache: `ascili-cache-v2.4.0` in both `sw.js` and `app.js`
     - Asset References: `?v=2.4.0` in `index.html`
     - Native Bridge: `getAppVersion()` returns `"2.4.0"`
+=======
+    - `build.gradle`: `versionCode 30`, `versionName "3.0.0"`
+    - Interface Badge: `<span class="waiting-badge">V3.0.0</span>`
+    - Asset Cache: `ascili-cache-v3.0.0` in both `sw.js` and `app.js`
+    - Asset References: `?v=3.0.0` in `index.html`
+    - Native Bridge: `getAppVersion()` returns `"3.0.0"`
+>>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 ---
 
