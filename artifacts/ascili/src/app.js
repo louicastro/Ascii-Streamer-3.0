@@ -3672,13 +3672,14 @@ if (typeof window !== 'undefined') {
 
 // ─── PWA Service Worker Registration & Cache Purging ──────────────────────────
 
-const CURRENT_CACHE_NAME = 'ascili-cache-v3.0.0';
+const CURRENT_CACHE_NAME = 'ascili-cache-v3.0.1';
+const IS_VITE_DEV = typeof import.meta !== 'undefined' && Boolean(import.meta.env && import.meta.env.DEV);
 
 if (typeof window !== 'undefined' && 'caches' in window) {
   caches.keys().then(keys => {
     keys.forEach(k => {
-      // Purge any outdated ascili caches, keep only current active cache
-      if (k.startsWith('ascili-cache-') && k !== CURRENT_CACHE_NAME) {
+      // In Vite dev mode purge all caches; in prod keep only current active cache
+      if (k.startsWith('ascili-cache-') && (IS_VITE_DEV || k !== CURRENT_CACHE_NAME)) {
         console.log('[ASCILI] Purging outdated cache:', k);
         caches.delete(k);
       }
@@ -3686,17 +3687,23 @@ if (typeof window !== 'undefined' && 'caches' in window) {
   }).catch(() => {});
 }
 
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => {
-        reg.update();
-        console.log('[ASCILI] Service worker active, scope:', reg.scope);
-      })
-      .catch(err => {
-        console.warn('[ASCILI] Service worker registration failed:', err);
-      });
-  });
+if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+  if (IS_VITE_DEV) {
+    navigator.serviceWorker.getRegistrations().then(regs => {
+      regs.forEach(reg => reg.unregister());
+    }).catch(() => {});
+  } else if (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => {
+          reg.update();
+          console.log('[ASCILI] Service worker active, scope:', reg.scope);
+        })
+        .catch(err => {
+          console.warn('[ASCILI] Service worker registration failed:', err);
+        });
+    });
+  }
 }
 
 // ─── Native Android Bridge Integration ────────────────────────────────────────

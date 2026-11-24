@@ -1,5 +1,5 @@
 // ASCILI Offline Service Worker
-const CACHE_NAME = 'ascili-cache-v3.0.0';
+const CACHE_NAME = 'ascili-cache-v3.0.1';
 
 const STATIC_ASSETS = [
   './',
@@ -54,6 +54,11 @@ self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
 
+  const url = new URL(req.url);
+  if (url.pathname.startsWith('/@') || url.pathname.includes('node_modules') || url.searchParams.has('t')) {
+    return;
+  }
+
   // 1. Navigation requests (HTML documents)
   // Network-first with immediate offline fallback to cached page or index.html
   if (req.mode === 'navigate' || req.destination === 'document') {
@@ -78,26 +83,22 @@ self.addEventListener('fetch', event => {
   }
 
   // 2. Static application resources (scripts, workers, styles, fonts, images)
-  // Stale-While-Revalidate: return cached version immediately for 100% offline support
-  // and instant load, while updating cache from network in background when online.
+  // Network-first when online so UI/code updates apply immediately, with cache fallback offline.
   event.respondWith(
-    caches.match(req, { ignoreSearch: true }).then(cachedResponse => {
-      const fetchPromise = fetch(req)
-        .then(networkResponse => {
-          if (networkResponse && networkResponse.status === 200 && (networkResponse.type === 'basic' || networkResponse.type === 'cors')) {
-            const resClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(req, resClone));
-          }
-          return networkResponse;
-        })
-        .catch(err => {
-          if (!cachedResponse) {
-            console.warn('[SW] Offline fetch failed and no cache entry for:', req.url);
-          }
-          return cachedResponse;
-        });
-
-      return cachedResponse || fetchPromise;
-    })
+    fetch(req)
+      .then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200 && (networkResponse.type === 'basic' || networkResponse.type === 'cors')) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, resClone));
+        }
+        return networkResponse;
+      })
+      .catch(async () => {
+        const cachedResponse = await caches.match(req, { ignoreSearch: true });
+        if (!cachedResponse) {
+          console.warn('[SW] Offline fetch failed and no cache entry for:', req.url);
+        }
+        return cachedResponse;
+      })
   );
 });

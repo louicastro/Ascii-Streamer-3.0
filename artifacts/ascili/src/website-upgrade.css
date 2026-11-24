@@ -889,6 +889,7 @@ input[type="range"] {
     font-size: 9.5px;
     overflow-x: auto;
     scrollbar-width: none;
+    z-index: 110;
   }
 
   .workstation-telemetry::-webkit-scrollbar {

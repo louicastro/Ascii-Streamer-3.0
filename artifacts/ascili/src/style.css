@@ -404,8 +404,13 @@ body {
   opacity: 0;
   border-left: none;
   overflow: hidden;
-  visibility: hidden;
   pointer-events: none;
+}
+
+@media (min-width: 769px) {
+  .settings-panel.collapsed {
+    display: none;
+  }
 }
 
 .settings-header {
@@ -551,6 +556,10 @@ body {
 }
 
 .setting-select::-ms-expand {
+  display: none;
+}
+
+.setting-select::picker-icon {
   display: none;
 }
 
