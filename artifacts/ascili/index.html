@@ -222,7 +222,7 @@
         <button class="icon-btn" id="btnFullscreen" data-testid="btn-fullscreen" title="Fullscreen (F)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3M3 8V5a2 2 0 0 1 2-2h3"/></svg>
         </button>
-        <button class="icon-btn" id="btnCopyAscii" data-testid="btn-copy-ascii" title="Copy ASCII Frame (C)">
+        <button class="icon-btn" id="btnCopyAscii" data-testid="btn-copy-ascii" title="Copy ASCII Frame (X)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
         <button class="icon-btn" id="btnMirror" data-testid="btn-mirror" title="Mirror Feed (M)">
@@ -405,7 +405,7 @@
             </select>
           </div>
 
-          <div class="setting-row">
+          <div class="setting-row setting-row-inline">
             <label class="setting-label" for="checkSubjectDetection">Subject Detection</label>
             <input type="checkbox" id="checkSubjectDetection" class="setting-checkbox" />
           </div>
@@ -462,7 +462,7 @@
             </select>
           </div>
 
-          <div class="setting-row">
+          <div class="setting-row setting-row-inline">
             <label class="setting-label" for="checkNegSpaceAnim">Animated Background</label>
             <input type="checkbox" id="checkNegSpaceAnim" class="setting-checkbox" />
           </div>
@@ -518,29 +518,29 @@
               </select>
             </div>
 
-            <div class="setting-row">
+            <div class="setting-row setting-row-inline">
               <label class="setting-label" for="chkMirror">Mirror Feed</label>
               <input type="checkbox" id="chkMirror" class="setting-checkbox" />
             </div>
 
             <div class="setting-row">
-              <label class="setting-label">Brightness</label>
+              <label class="setting-label" for="inputBrightness">Brightness <span class="setting-value" id="valBrightness">0</span></label>
               <input class="setting-range" id="inputBrightness" type="range" min="0" max="200" value="100" />
             </div>
 
             <div class="setting-row">
-              <label class="setting-label">Contrast</label>
-              <input class="setting-range" id="inputContrast" type="range" min="0" max="200" value="100" />
+              <label class="setting-label" for="inputContrast">Contrast <span class="setting-value" id="valContrast">10</span></label>
+              <input class="setting-range" id="inputContrast" type="range" min="0" max="200" value="110" />
             </div>
 
             <div class="setting-row">
-              <label class="setting-label">Gamma</label>
+              <label class="setting-label" for="inputGamma">Gamma <span class="setting-value" id="valGamma">0</span></label>
               <input class="setting-range" id="inputGamma" type="range" min="40" max="220" value="100" />
             </div>
 
             <div class="setting-row">
-              <label class="setting-label">Edge Detection</label>
-              <input class="setting-range" id="inputEdge" type="range" min="0" max="100" value="45" />
+              <label class="setting-label" for="inputEdge">Edge Detection <span class="setting-value" id="valEdgeThreshold">18</span></label>
+              <input class="setting-range" id="inputEdge" type="range" min="0" max="100" value="18" />
             </div>
           </div>
         </details>
@@ -567,13 +567,13 @@
             </select>
           </div>
           <div class="setting-row">
-            <button class="source-btn" id="btnOpenExportModal" data-testid="btn-open-export" style="width: 100%; justify-content: center; padding: 10px 12px; font-weight: bold; background: var(--bg-hover); border: 1px solid var(--accent); color: var(--accent); cursor: pointer; border-radius: 4px;">
+            <button class="source-btn btn-export-workstation" id="btnOpenExportModal" data-testid="btn-open-export" type="button">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
               OPEN EXPORT WORKSTATION (C)
             </button>
           </div>
           <div class="setting-row" style="margin-top: 8px;">
-            <button class="source-btn" id="btnPrivacyPolicy" style="width: 100%; justify-content: center; padding: 8px 12px; font-size: 0.8rem; background: transparent; border: 1px solid #2a3a2d; color: #7a9c82; cursor: pointer; border-radius: 4px;">
+            <button class="source-btn btn-privacy-notice" id="btnPrivacyPolicy" type="button">
               🛡️ PRIVACY &amp; SECURITY NOTICE
             </button>
           </div>
@@ -708,6 +708,34 @@
         <button class="cv-btn-danger" id="cvStop" type="button" style="display:none">STOP</button>
         <button class="cv-btn-green" id="cvSave" type="button" style="display:none"><span id="cvSaveLabel">Download Video</span></button>
         <button class="cv-btn-secondary" id="cvConvertAnother" type="button" style="display:none">CONVERT ANOTHER</button>
+      </footer>
+    </section>
+  </div>
+
+  <div class="cv-overlay" id="privacyOverlay" aria-hidden="true">
+    <section class="cv-panel cv-panel-compact" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+      <header class="cv-header">
+        <div class="cv-title" id="privacyTitle">PRIVACY &amp; SECURITY NOTICE</div>
+        <button class="icon-btn" id="privacyClose" type="button" aria-label="Close privacy notice">×</button>
+      </header>
+      <div class="cv-body">
+        <div class="privacy-list">
+          <div class="privacy-item">
+            <span class="privacy-num">01</span>
+            <span>All ASCII rendering, segmentation, and video conversion run <strong>100% locally</strong> on your device.</span>
+          </div>
+          <div class="privacy-item">
+            <span class="privacy-num">02</span>
+            <span>Zero camera, screen, audio, or uploaded video data is ever transmitted to remote servers.</span>
+          </div>
+          <div class="privacy-item">
+            <span class="privacy-num">03</span>
+            <span>Fully functional offline once loaded via local WebGL2 / Canvas2D engines.</span>
+          </div>
+        </div>
+      </div>
+      <footer class="cv-footer">
+        <button class="cv-btn-primary" id="privacyOk" type="button">GOT IT</button>
       </footer>
     </section>
   </div>

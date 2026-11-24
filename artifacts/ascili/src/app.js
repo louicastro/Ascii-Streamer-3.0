@@ -378,14 +378,17 @@ function readConfig() {
   if (rangeBrightness) {
     const value = parseInt(rangeBrightness.value, 10);
     cfg.brightness = legacyCenteredSliders ? value - 100 : value;
+    if (valBrightness) valBrightness.textContent = String(cfg.brightness);
   }
   if (rangeContrast) {
     const value = parseInt(rangeContrast.value, 10);
     cfg.contrast = legacyCenteredSliders ? value - 100 : value;
+    if (valContrast) valContrast.textContent = String(cfg.contrast);
   }
   if (rangeGamma) {
     const value = parseInt(rangeGamma.value, 10);
     cfg.gamma = legacyCenteredSliders ? value - 100 : value;
+    if (valGamma) valGamma.textContent = String(cfg.gamma);
   }
   if (rangeSaturation) cfg.saturation = parseInt(rangeSaturation.value, 10);
 
@@ -657,6 +660,7 @@ function applyThemeColor(hexColor) {
   root.style.setProperty('--green', hexColor);
   root.style.setProperty('--green-dim', accentDim);
   root.style.setProperty('--green-muted', `rgba(${accentRgb}, 0.18)`);
+  root.style.setProperty('--border-bright', `rgba(${accentRgb}, 0.28)`);
   root.style.setProperty('--theme-accent', hexColor);
   root.style.setProperty('--theme-accent-rgb', accentRgb);
   root.style.setProperty('--theme-accent-dim', accentDim);
@@ -1755,6 +1759,10 @@ function toggleSettings(forceState) {
   const shouldCollapse = typeof forceState === 'boolean' ? !forceState : !isCurrentlyCollapsed;
 
   settingsPanel.classList.toggle('collapsed', shouldCollapse);
+  settingsPanel.setAttribute('aria-hidden', String(shouldCollapse));
+  if (btnSettings) {
+    btnSettings.setAttribute('aria-expanded', String(!shouldCollapse));
+  }
   if (mobileMenuBtn) {
     mobileMenuBtn.setAttribute('aria-expanded', String(!shouldCollapse));
   }
@@ -1776,18 +1784,18 @@ btnResetSettings.addEventListener('click', () => {
 
 // ─── Live slider label updates ────────────────────────────────────────────────
 
-function bindRange(rangeEl, labelEl) {
+function bindRange(rangeEl, labelEl, centeredOffset = 0) {
   if (!rangeEl) return;
   rangeEl.addEventListener('input', () => {
-    if (labelEl) labelEl.textContent = rangeEl.value;
+    if (labelEl) labelEl.textContent = String(parseInt(rangeEl.value, 10) - centeredOffset);
     readConfig();
   });
 }
 bindRange(rangeCols,       valCols);
 bindRange(rangeFontSize,   valFontSize);
-bindRange(rangeBrightness, valBrightness);
-bindRange(rangeContrast,   valContrast);
-bindRange(rangeGamma,      valGamma);
+bindRange(rangeBrightness, valBrightness, legacyCenteredSliders ? 100 : 0);
+bindRange(rangeContrast,   valContrast,   legacyCenteredSliders ? 100 : 0);
+bindRange(rangeGamma,      valGamma,      legacyCenteredSliders ? 100 : 0);
 bindRange(rangeSaturation, valSaturation);
 
 // ─── Interactive Grid Columns & Font Sizing Steppers ─────────────────────────
@@ -3525,8 +3533,14 @@ document.addEventListener('keydown', e => {
   // Ignore when focus is inside a text input or select
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
 
-  // Escape closes the converter modal
+  // Escape closes the converter or privacy modal
   if (e.key === 'Escape') {
+    const privacyEl = $('privacyOverlay');
+    if (privacyEl && privacyEl.classList.contains('open')) {
+      privacyEl.classList.remove('open');
+      privacyEl.setAttribute('aria-hidden', 'true');
+      return;
+    }
     if (cvOverlay.classList.contains('open')) {
       if (cvExporter._running || cvSrtExporter._running || cvGifExporter._running || cvHtmlExporter._running) {
         if (!confirm('Stop the current conversion?')) return;
@@ -3571,6 +3585,8 @@ document.addEventListener('keydown', e => {
     case 'c': case 'C':
     case 'e': case 'E':
       e.preventDefault(); openConverter(); break;
+    case 'x': case 'X':
+      e.preventDefault(); copyAsciiFrameToClipboard(); break;
     case 'm': case 'M':
       e.preventDefault();
       if (btnMirror) btnMirror.click();
@@ -3686,15 +3702,31 @@ if (typeof window !== 'undefined' && 'serviceWorker' in navigator && (window.loc
 // ─── Native Android Bridge Integration ────────────────────────────────────────
 if (typeof window !== 'undefined') {
   const btnPrivacy = document.getElementById('btnPrivacyPolicy');
+  const privacyOverlay = document.getElementById('privacyOverlay');
+  const privacyClose = document.getElementById('privacyClose');
+  const privacyOk = document.getElementById('privacyOk');
+
+  const closePrivacyModal = () => {
+    if (!privacyOverlay) return;
+    privacyOverlay.classList.remove('open');
+    privacyOverlay.setAttribute('aria-hidden', 'true');
+  };
+
   if (btnPrivacy) {
     btnPrivacy.addEventListener('click', () => {
       if (window.AsciliAndroidBridge && typeof window.AsciliAndroidBridge.showPrivacyPolicy === 'function') {
         window.AsciliAndroidBridge.showPrivacyPolicy();
-      } else {
-        alert('ASCILI Privacy Policy:\n\n1. All ASCII rendering & video conversion occurs 100% locally on your device.\n2. Zero camera or audio data is ever transmitted to remote servers.\n3. Fully functional offline.');
+      } else if (privacyOverlay) {
+        privacyOverlay.classList.add('open');
+        privacyOverlay.setAttribute('aria-hidden', 'false');
       }
     });
   }
+  privacyClose?.addEventListener('click', closePrivacyModal);
+  privacyOk?.addEventListener('click', closePrivacyModal);
+  privacyOverlay?.addEventListener('click', (e) => {
+    if (e.target === privacyOverlay) closePrivacyModal();
+  });
 
   // Add subtle tactile haptics for primary action buttons when running inside Android
   document.addEventListener('click', (e) => {
