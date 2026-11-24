@@ -1,5 +1,3 @@
-import './style.css';
-import './website-upgrade.css';
 import { AsciliEngine, CHAR_SETS } from './engine.js';
 import { AsciliVideoExporter, AsciliSrtExporter, AsciliLiveRecorder, AsciliGifRecorder, AsciliGifVideoExporter, AsciliHtmlExporter, renderFrameToCanvas, computeFontForResolution, CHAR_W_FACTOR, setSharedEngine, getCandidateMimeTypes, RESOLUTIONS } from './exporter.js';
 import { AsciliGifEncoder } from './gif-encoder.js';
