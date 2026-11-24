@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 import './style.css';
 import './website-upgrade.css';
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 import { AsciliEngine, CHAR_SETS } from './engine.js';
 import { AsciliVideoExporter, AsciliSrtExporter, AsciliLiveRecorder, AsciliGifRecorder, AsciliGifVideoExporter, AsciliHtmlExporter, renderFrameToCanvas, computeFontForResolution, CHAR_W_FACTOR, setSharedEngine, getCandidateMimeTypes, RESOLUTIONS } from './exporter.js';
 import { AsciliGifEncoder } from './gif-encoder.js';
@@ -68,10 +65,6 @@ const btnDownloadHtml = $('btnDownloadHtml');
 const btnScreenshot = $('btnScreenshot');
 const btnOpenExportModal = $('btnOpenExportModal');
 const mobileMenuBtn = $('mobileMenuBtn');
-<<<<<<< HEAD
-const presetBar     = $('presetBar');
-=======
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 // Record button & indicator
 const btnRecord     = $('btnRecord');
@@ -142,8 +135,6 @@ const valGamma          = $('valGamma');
 const rangeSaturation   = $('rangeSaturation');
 const valSaturation     = $('valSaturation');
 
-<<<<<<< HEAD
-=======
 // System.cfg grid and font steppers
 const btnSettingColsDec  = $('btnSettingColsDec');
 const btnSettingColsInc  = $('btnSettingColsInc');
@@ -154,7 +145,6 @@ const statGlyph          = $('statGlyph');
 const statSourceRes      = $('statSourceRes');
 const statPipeline       = $('statPipeline');
 
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 // Negative Space & Segmentation DOM refs
 const selectNegSpaceMode        = $('selectNegSpaceMode');
 const checkSubjectDetection     = $('checkSubjectDetection');
@@ -369,13 +359,10 @@ function readConfig() {
   cfg.cols        = Math.min(1000, Math.max(20, parseInt(rangeCols?.value, 10) || cfg.cols));
   cfg.fontSize    = Math.min(30, Math.max(1, parseInt(rangeFontSize?.value, 10) || cfg.fontSize));
   cfg.fps         = Math.min(120, Math.max(1, parseFloat(selectFps?.value) || 60));
-<<<<<<< HEAD
-=======
 
   if (valCols) valCols.textContent = String(cfg.cols);
   if (valFontSize) valFontSize.textContent = String(cfg.fontSize);
   if (statGlyph) statGlyph.textContent = `${cfg.fontSize}px`;
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   cfg.dithering   = selectDithering?.value || 'none';
   cfg.aspectRatio = selectAspectRatio?.value || 'auto';
   cfg.mirror      = chkMirror?.checked ?? false;
@@ -629,21 +616,17 @@ function applyPreset(name) {
 
   cfg.mode = name;
   presetBtns.forEach(b => b.classList.toggle('active', b.dataset.preset === name));
-<<<<<<< HEAD
-=======
   
   // Dynamic Phosphor Theme Synchronization
   const themeColor = PRESET_THEME_COLORS[name] || (p.colorMode === 'truecolor' ? '#38bdf8' : '#39ff52');
   state.monoColor = themeColor;
   applyThemeColor(themeColor);
+  if (inputCustomColor) inputCustomColor.value = themeColor;
 
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   readConfig();
   showToast('Preset: ' + name.toUpperCase());
 }
 
-<<<<<<< HEAD
-=======
 // ─── Dynamic Phosphor Theme Engine ──────────────────────────────────────────
 
 const PRESET_THEME_COLORS = {
@@ -687,22 +670,13 @@ function applyThemeColor(hexColor) {
   });
 }
 
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 // ─── Color Swatches ──────────────────────────────────────────────────────────
 
 colorSwatches.forEach(swatch => {
   swatch.addEventListener('click', () => {
     state.monoColor = swatch.dataset.color;
-<<<<<<< HEAD
-    colorSwatches.forEach(s => s.classList.remove('active'));
-    swatch.classList.add('active');
-    if (inputCustomColor) inputCustomColor.value = state.monoColor;
-    // Update CSS variable for engine use
-    document.documentElement.style.setProperty('--green', state.monoColor);
-=======
     applyThemeColor(state.monoColor);
     if (inputCustomColor) inputCustomColor.value = state.monoColor;
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     readConfig();
     showToast('Color: ' + swatch.title);
   });
@@ -711,12 +685,7 @@ colorSwatches.forEach(swatch => {
 if (inputCustomColor) {
   inputCustomColor.addEventListener('input', e => {
     state.monoColor = e.target.value;
-<<<<<<< HEAD
-    colorSwatches.forEach(s => s.classList.remove('active'));
-    document.documentElement.style.setProperty('--green', state.monoColor);
-=======
     applyThemeColor(state.monoColor);
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     readConfig();
   });
 }
@@ -826,8 +795,6 @@ function updateStats(dims, latency, performanceStats = {}) {
   }
   if (statChars) statChars.textContent = dims.chars.toLocaleString();
   if (statDims) statDims.textContent = `${dims.cols}x${dims.rows}`;
-<<<<<<< HEAD
-=======
   if (statGlyph) statGlyph.textContent = `${cfg.fontSize}px`;
   if (statFpsDot) {
     const fps = state.actualFps || 0;
@@ -851,7 +818,6 @@ function updateStats(dims, latency, performanceStats = {}) {
       statSourceRes.textContent = 'STANDBY';
     }
   }
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   if (statMode) {
     statMode.textContent = cfg.colorMode.toUpperCase();
     statMode.classList.toggle('active', state.running);
@@ -1824,8 +1790,6 @@ bindRange(rangeContrast,   valContrast);
 bindRange(rangeGamma,      valGamma);
 bindRange(rangeSaturation, valSaturation);
 
-<<<<<<< HEAD
-=======
 // ─── Interactive Grid Columns & Font Sizing Steppers ─────────────────────────
 
 function stepColumns(delta, showIndicator = true) {
@@ -1856,7 +1820,6 @@ btnSettingColsInc?.addEventListener('click', () => stepColumns(+5));
 btnSettingFontDec?.addEventListener('click', () => stepFontSize(-1));
 btnSettingFontInc?.addEventListener('click', () => stepFontSize(+1));
 
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 if (rangeEdgeThreshold) bindRange(rangeEdgeThreshold, valEdgeThreshold);
 if (checkAiEdge) checkAiEdge.addEventListener('change', () => readConfig());
 if (checkTemporal) checkTemporal.addEventListener('change', () => readConfig());
@@ -3583,8 +3546,6 @@ document.addEventListener('keydown', e => {
   if (cvOverlay.classList.contains('open')) return;
 
   switch (e.key) {
-<<<<<<< HEAD
-=======
     case 'ArrowUp':
       e.preventDefault();
       stepColumns(+5);
@@ -3601,7 +3562,6 @@ document.addEventListener('keydown', e => {
       e.preventDefault();
       stepFontSize(+1);
       break;
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     case 'f': case 'F':
       e.preventDefault(); toggleFullscreen(); break;
     case ' ':
@@ -3632,8 +3592,6 @@ document.addEventListener('keydown', e => {
     case '5': applyPreset('blocks');     break;
     case '6': applyPreset('video2chars'); break;
     case '7': applyPreset('negative_space'); break;
-<<<<<<< HEAD
-=======
     case '[':
       e.preventDefault();
       stepFontSize(-1);
@@ -3661,14 +3619,13 @@ document.addEventListener('keydown', e => {
         if (cfg.cols !== previousCols || cfg.fontSize !== previousFontSize) {
           showToast(`COLUMNS: ${cfg.cols} · FONT SIZE: ${cfg.fontSize}px`, 900);
         }
-      break;
+        break;
       }
     case '=':
     case '+':
       e.preventDefault();
       stepColumns(+5);
       break;
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     case 'n': case 'N':
       e.preventDefault();
       if (cfg.negSpaceMode === 'negative_space') {
@@ -3699,11 +3656,7 @@ if (typeof window !== 'undefined') {
 
 // ─── PWA Service Worker Registration & Cache Purging ──────────────────────────
 
-<<<<<<< HEAD
-const CURRENT_CACHE_NAME = 'ascili-cache-v2.4.2';
-=======
 const CURRENT_CACHE_NAME = 'ascili-cache-v3.0.0';
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 if (typeof window !== 'undefined' && 'caches' in window) {
   caches.keys().then(keys => {

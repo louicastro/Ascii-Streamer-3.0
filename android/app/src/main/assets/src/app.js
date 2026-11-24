@@ -3492,11 +3492,7 @@ if (typeof window !== 'undefined') {
 
 // ─── PWA Service Worker Registration & Cache Purging ──────────────────────────
 
-<<<<<<< HEAD
-const CURRENT_CACHE_NAME = 'ascili-cache-v2.4.2';
-=======
 const CURRENT_CACHE_NAME = 'ascili-cache-v3.0.0';
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 
 if (typeof window !== 'undefined' && 'caches' in window) {
   caches.keys().then(keys => {

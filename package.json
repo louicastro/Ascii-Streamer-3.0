@@ -11,14 +11,10 @@
     "preinstall": "node -e \"if (!process.env.npm_config_user_agent || !process.env.npm_config_user_agent.startsWith('pnpm/')) { console.error('Use pnpm instead: https://pnpm.io'); process.exit(1); }\"",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
-<<<<<<< HEAD
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-=======
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
     "engine:build": "cargo build --release --manifest-path rust_video_engine/Cargo.toml",
     "engine:test": "node -e \"const cp=require('child_process'); const exe = process.platform === 'win32' ? 'rust_video_engine\\\\rust_video_engine.exe' : './rust_video_engine/target/release/rust_video_engine'; cp.execSync(exe + ' --test', {stdio: 'inherit'});\"",
     "engine:serve": "node -e \"const cp=require('child_process'); const exe = process.platform === 'win32' ? 'rust_video_engine\\\\rust_video_engine.exe' : './rust_video_engine/target/release/rust_video_engine'; cp.execSync(exe + ' --serve', {stdio: 'inherit'});\""
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
   },
   "private": true,
   "devDependencies": {

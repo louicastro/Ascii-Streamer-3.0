@@ -29,11 +29,6 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-<<<<<<< HEAD
-  <link rel="stylesheet" href="./src/style.css?v=2.4.0" />
-  <link rel="stylesheet" href="./src/website-upgrade.css?v=2.4.0" />
-=======
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 </head>
 <body>
 
@@ -48,20 +43,6 @@
       </button>
     </div>
 
-<<<<<<< HEAD
-    <div class="preset-bar" id="presetBar">
-      <span class="preset-label">PRESETS</span>
-      <button class="preset-btn active" data-preset="classic" data-testid="preset-classic">[1] Classic Green</button>
-      <button class="preset-btn" data-preset="matrix" data-testid="preset-matrix">[2] Matrix Rain</button>
-      <button class="preset-btn" data-preset="truecolor" data-testid="preset-truecolor">[3] True Color</button>
-      <button class="preset-btn" data-preset="braille" data-testid="preset-braille">[4] Braille Art</button>
-      <button class="preset-btn" data-preset="blocks" data-testid="preset-blocks">[5] Block Pixels</button>
-      <button class="preset-btn" data-preset="video2chars" data-testid="preset-video2chars">[6] Video2Chars</button>
-      <button class="preset-btn" data-preset="negative_space" data-testid="preset-negative_space">[7] Negative Space</button>
-    </div>
-
-=======
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     <div class="source-bar">
       <button class="source-btn" id="btnWebcam" data-testid="btn-webcam">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -156,11 +137,7 @@
       <div class="waiting-overlay" id="waitingOverlay">
         <div class="waiting-hero">
           <div class="waiting-badge-row">
-<<<<<<< HEAD
-            <span class="waiting-badge">V2.4.0</span>
-=======
             <span class="waiting-badge">V3.0.0</span>
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
             <span class="waiting-tagline">REAL-TIME ASCII & ANSI VIDEO SYNTHESIZER</span>
           </div>
           <h1 class="waiting-title">Convert Webcam, Screen, or Video into ASCII Art</h1>
@@ -301,8 +278,6 @@
       <div class="settings-body">
 
         <div class="settings-section">
-<<<<<<< HEAD
-=======
           <div class="section-label">RENDER PRESETS</div>
           <div class="preset-bar" id="presetBar">
             <button class="preset-btn active" data-preset="classic" data-testid="preset-classic">[1] Classic Green</button>
@@ -342,7 +317,6 @@
         </div>
 
         <div class="settings-section">
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
           <div class="section-label">PRIMARY RENDER MODE</div>
 
           <div class="setting-row">
@@ -513,19 +487,6 @@
 
           <div class="settings-details-content">
             <div class="setting-row">
-<<<<<<< HEAD
-              <label class="setting-label" for="rangeCols">Output Width <span class="setting-value"><span id="valCols">80</span> cols</span></label>
-              <input class="setting-range" id="rangeCols" type="range" min="20" max="1000" step="10" value="80" aria-label="Output width in columns" />
-            </div>
-
-            <div class="setting-row">
-              <label class="setting-label" for="rangeFontSize">Font Size <span class="setting-value"><span id="valFontSize">10</span> px</span></label>
-              <input class="setting-range" id="rangeFontSize" type="range" min="1" max="30" step="1" value="10" aria-label="Font size in pixels" />
-            </div>
-
-            <div class="setting-row">
-=======
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
               <label class="setting-label" for="selectFps">Frame Rate</label>
               <select class="setting-select" id="selectFps" data-testid="select-fps" aria-label="Target render frame rate">
                 <option value="15">15 FPS</option>
@@ -622,17 +583,6 @@
     </aside>
   </main>
 
-<<<<<<< HEAD
-  <!-- Live telemetry status bar -->
-  <footer class="stats-bar" id="statsBar">
-    <div class="stat"><span class="stat-label">FPS</span><span class="stat-val" id="statFps">00</span></div>
-    <div class="stat"><span class="stat-label">LATENCY</span><span class="stat-val" id="statLatency">000</span><span class="stat-unit">ms</span></div>
-    <div class="stat"><span class="stat-label">CHARS</span><span class="stat-val" id="statChars">0</span></div>
-    <div class="stat"><span class="stat-label">GRID</span><span class="stat-val" id="statDims">0x0</span></div>
-    <div class="stat-right">
-      <span class="stat-badge" id="statMode">MONOCHROME</span>
-      <span class="stat-badge" id="statSource">NONE</span>
-=======
   <!-- Live telemetry status bar (Workstation Telemetry Dock) -->
   <footer class="stats-bar workstation-telemetry" id="statsBar">
     <div class="stat"><span class="stat-dot" id="statFpsDot"></span><span class="stat-label">FPS</span><span class="stat-val" id="statFps">00</span></div>
@@ -645,7 +595,6 @@
       <span class="stat-badge stat-badge-pipeline" id="statPipeline">WEBGL2</span>
       <span class="stat-badge stat-badge-mode" id="statMode">MONOCHROME</span>
       <span class="stat-badge stat-badge-source" id="statSource">NONE</span>
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
     </div>
   </footer>
 
@@ -765,10 +714,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<<<<<<< HEAD
-  <script type="module" src="./src/app.js?v=2.4.2"></script>
-=======
   <script type="module" src="./src/app.js?v=3.0.0"></script>
->>>>>>> 829f0ee (Release ASCII Streamer 3.0 with native Android app (SDK 35) and documentation)
 </body>
 </html>
